@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify,render_template
 import google.genai as genai
-client = genai.Client(api_key="AIzaSyDhTPOfuBKLxRh3DYciyAkRRuNnrpqPnSY")
+client = genai.Client(api_key="your API key")
 app=Flask(__name__)
 @app.route("/")
 def home():
@@ -14,3 +14,4 @@ def summarize():
     )
     return jsonify({"summary":response.text})
 app.run(port=8000)
+
